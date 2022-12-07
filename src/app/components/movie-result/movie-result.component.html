@@ -1,0 +1,22 @@
+  <div *ngIf="movie$ | async as movie" class="card mx-5 d-flex flex-row justify-content-around">
+    <img [src]="movie.Poster" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5><span class="font-monospace h5">Title</span> - {{movie.Title}}</h5>
+      <ul class="properties">
+        <li><b>Year:</b> {{movie.Year}}</li>
+        <li><b>Plot:</b> {{movie.Plot}}</li>
+        <li><b>Awards:</b> {{movie.Awards}}</li>
+        <li><b>Actors:</b> {{movie.Actors}}</li>
+        <li><b>Country:</b> {{movie.Country}}</li>
+        <li><b>Released:</b> {{movie.Released}}</li>
+        <li><b>Language:</b> {{movie.Language}}</li>
+      </ul>
+    </div>
+    <div class="w-25 me-4">
+      <b>Ratings: </b>
+      <ul *ngFor="let rate of movie.Ratings" class="border rounded my-2">
+        <p><b>Source:</b> {{rate.Source}}</p>
+        <p><b>Score:</b> {{rate.Value}}</p>
+      </ul>
+    </div>
+  </div>
